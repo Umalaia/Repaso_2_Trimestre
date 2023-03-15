@@ -47,4 +47,13 @@ public class AutorDaoImplList implements AutorDao {
 		return lista;
 	}
 
+	
+	@Override
+	public Autor modificarAutor(Autor autor) {
+		int posicion = lista.indexOf(autor);
+		if (posicion == -1)
+			return null;
+		return lista.set(posicion, autor);
+		
+	}
 }

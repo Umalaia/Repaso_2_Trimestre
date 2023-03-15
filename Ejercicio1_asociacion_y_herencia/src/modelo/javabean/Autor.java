@@ -1,5 +1,7 @@
 package modelo.javabean;
 
+import java.util.Objects;
+
 public class Autor extends Persona{
 	private String seudonimo;
 
@@ -25,6 +27,26 @@ public class Autor extends Persona{
 	@Override
 	public String toString() {
 		return "Autor [seudonimo=" + seudonimo + ", nombre=" + nombre + ", nacionalidad=" + nacionalidad + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + Objects.hash(seudonimo);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Autor other = (Autor) obj;
+		return Objects.equals(seudonimo, other.seudonimo);
 	}
 	
 	

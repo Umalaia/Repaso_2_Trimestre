@@ -16,6 +16,7 @@ public class TestAutorDao {
 		//Creamos varios autores
 		Autor au1= new Autor("Macarena", "Arabe", "Maca");
 		Autor au2 = new Autor("Pep", "Ruso", "Pezki");
+		Autor au3 = new Autor("Oscar", "Iraní", "OSVAL");
 		
 		
 		
@@ -35,7 +36,10 @@ public class TestAutorDao {
 		//Buscar uno
 		System.out.println(adao.buscarUno(au1.getSeudonimo()));
 		System.out.println(adao.buscarUno("Pezki"));
-
+		
+		//Modificar uno
+		System.out.println(adao.modificarAutor(au3));
+		
 		//Borrar uno
 		System.out.println(adao.bajaAutor(au1));
 		
@@ -46,14 +50,17 @@ public class TestAutorDao {
 		System.out.println(" ");
 		
 		
+		
+		
 		//Para probar la herencia, nos creamos una persona que sea Autor
-		Persona au3 = new Autor("Olivia","Finlandia","Oli");
+		Persona au4 = new Autor("Olivia","Finlandia","Oli");
 		
 		//Nos creamos un ArrayList de Personas, añadiendo a la lista los autores
 		ArrayList<Persona> lista = new ArrayList();
 		lista.add(au1);
 		lista.add(au2);
 		lista.add(au3);
+		lista.add(au4);
 		
 		//Buscamos todos los autores
 		for(Persona ele : lista) {

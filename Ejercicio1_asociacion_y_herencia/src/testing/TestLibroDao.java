@@ -48,6 +48,54 @@ public class TestLibroDao {
 		//Buscar not ade la critica
 		System.out.println(libImpl.buscarUno("Amapolas").getCritica().getPuntuacion());
 		
+
+
+		
+		
+		
+		LibroDaoImplList libdao = new LibroDaoImplList();
+		
+		
+		Libro libro2 = new Libro("Agonias", "02/10/1996", "Terror", "Español", 5.1, a1, c1);
+		
+		//Dar de alta
+		libdao.altaLibro(libro2);
+		
+		//Buscar un libro
+		libdao.buscarUno(libro2.getTitulo());
+		libdao.buscarUno("Amapolas");
+		
+		//BuscarTodos
+		for (Libro ele : libdao.buscarTodos()) {
+			System.out.println(ele);
+		}
+		
+		//Buscar por genero
+		for(Libro ele : libdao.buscarPorGenero("Terror")) {
+			System.out.println(ele);
+		}
+		
+		//Dar de baja
+		System.out.println(libdao.bajaLibro(libro2));
+		
+		
+		//BuscarTodos
+			for (Libro ele : libdao.buscarTodos()) {
+					System.out.println(ele);
+			}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
